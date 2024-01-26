@@ -12,3 +12,9 @@ val Pink40 = Color(0xFF7D5260)
 
 val Violet = Color(0xFF754FF1)
 val BottomBarColor = Color(0xFF7751F2)
+
+val C1 = Color(0xFF562A9E)
+val C2 = Color(0xFFEB00FF)
+val C3 = Color(0xFFDE6CE7)
+val C4 = Color(0xFFE4A6E9)
+
