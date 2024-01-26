@@ -5,5 +5,12 @@
     <string name="ongoing_camps">Ongoing Camps</string>
     <string name="all_camps">All\nCamps</string>
     <string name="dashboard">\nDashboard</string>
+    <string name="top_greeting">Good Evening, John</string>
+    <string name="new_post_heading">New Camp</string>
+    <string name="collaborations">Collaborations</string>
+    <string name="ongoing_camp">Ongoing Camps</string>
+
+
+
 
 </resources>

@@ -30,6 +30,7 @@ import com.example.sharehope.fontFamily
 import com.example.sharehope.organizationSide.uiElements.BottomNavBar
 import com.example.sharehope.organizationSide.uiElements.CardButton
 import com.example.sharehope.organizationSide.uiElements.GradientCard
+import com.example.sharehope.organizationSide.uiElements.TopTextRow
 
 @Composable
 fun HomeScreen(
@@ -44,32 +45,7 @@ fun HomeScreen(
                 .padding(innerPadding)
                 .background(Color.White)
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ) {
-                Text(
-                    text = "Good Evening, John",
-                    modifier = Modifier
-                        .padding(8.dp),
-                    style = TextStyle(
-                        fontFamily = fontFamily,
-                        fontSize = 27.sp,
-                        color = Color.Black
-                    )
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.profile_icon),
-                    contentDescription = "",
-                    modifier = Modifier
-                        .padding(8.dp)
-                        .size(30.dp)
-                        .align(Alignment.CenterVertically),
-                    alignment = Alignment.Center
-                )
-            }
+            TopTextRow(heading = R.string.top_greeting)
             //Spacer(modifier = Modifier.height(8.dp))
             Row(
                 modifier = Modifier
