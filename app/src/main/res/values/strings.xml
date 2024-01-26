@@ -9,8 +9,9 @@
     <string name="new_post_heading">New Camp</string>
     <string name="collaborations">Collaborations</string>
     <string name="ongoing_camp">Ongoing Camps</string>
-
-
-
+    <string name="title">Title</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="amount_to_be_raised">Amount to be Raised</string>
 
 </resources>
