@@ -37,7 +37,7 @@ fun GradientCard(
 
     Box (
         modifier = modifier
-            .height(330.dp)
+            .height(300.dp)
             .padding(horizontal = 10.dp)
             .fillMaxWidth()
             .background(
@@ -67,7 +67,7 @@ fun GradientCard(
                     .padding(start = 18.dp)
             )
 
-            Spacer(modifier = Modifier.height(70.dp))
+            Spacer(modifier = Modifier.height(55.dp))
 
             Row (
                 modifier = modifier
@@ -87,7 +87,8 @@ fun GradientCard(
                     style = TextStyle(
                         fontSize = 26.sp,
                         fontFamily = fontFamily,
-                        fontWeight = FontWeight(400)
+                        fontWeight = FontWeight(400),
+                        color = Color.Black
                     )
                 )
                 Text(

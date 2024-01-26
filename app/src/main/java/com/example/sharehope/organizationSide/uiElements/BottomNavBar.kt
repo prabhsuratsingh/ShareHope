@@ -1,6 +1,7 @@
 package com.example.sharehope.organizationSide.uiElements
 
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,10 +29,9 @@ fun BottomNavBar() {
 
     NavigationBar (
         modifier = Modifier
-            .alpha(0.7f)
-            .blur(radius = 4.dp)
-            .width(390.dp)
-            .height(74.dp)
+            .width(392.dp)
+            .height(60.dp)
+            .background(color = Color.White)
             .clip(RoundedCornerShape(30.dp, 30.dp, 0.dp, 0.dp)),
         containerColor = BottomBarColor,
         contentColor = Color.Black

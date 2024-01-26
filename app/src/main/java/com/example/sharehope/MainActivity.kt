@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.sharehope.organizationSide.HomeScreen
 import com.example.sharehope.organizationSide.LandingScreen
 import com.example.sharehope.organizationSide.LoginScreen
 import com.example.sharehope.ui.theme.ShareHopeTheme
@@ -14,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ShareHopeTheme {
-                LandingScreen()
+                HomeScreen()
             }
         }
     }
@@ -26,6 +27,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     ShareHopeTheme {
-        LandingScreen()
+        HomeScreen()
     }
 }
