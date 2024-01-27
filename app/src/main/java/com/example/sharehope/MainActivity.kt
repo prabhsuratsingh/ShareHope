@@ -9,6 +9,7 @@ import com.example.sharehope.organizationSide.HomeScreen
 import com.example.sharehope.organizationSide.LandingScreen
 import com.example.sharehope.organizationSide.LoginScreen
 import com.example.sharehope.organizationSide.NewPostScreen
+import com.example.sharehope.organizationSide.OngoingCampDetailedView
 import com.example.sharehope.ui.theme.ShareHopeTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ShareHopeTheme {
-                NewPostScreen()
+                OngoingCampDetailedView()
             }
         }
     }
@@ -28,6 +29,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     ShareHopeTheme {
-        NewPostScreen()
+        OngoingCampDetailedView()
     }
 }

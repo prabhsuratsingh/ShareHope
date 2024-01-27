@@ -8,10 +8,16 @@
     <string name="top_greeting">Good Evening, John</string>
     <string name="new_post_heading">New Camp</string>
     <string name="collaborations">Collaborations</string>
-    <string name="ongoing_camp">Ongoing Camps</string>
     <string name="title">Title</string>
     <string name="location">Location</string>
     <string name="description">Description</string>
     <string name="amount_to_be_raised">Amount to be Raised</string>
+    <string name="total_money_raised">Total money\nraised</string>
+    <string name="amount_left">Amount\nleft</string>
+    <string name="impressions">Impressions</string>
+    <string name="volunteers">Volunteers</string>
+
+
+
 
 </resources>
