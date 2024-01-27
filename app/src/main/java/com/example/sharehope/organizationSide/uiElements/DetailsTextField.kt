@@ -1,6 +1,5 @@
 package com.example.sharehope.organizationSide.uiElements
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,7 +25,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sharehope.R
-import com.example.sharehope.fontFamily
+import com.example.sharehope.ui.theme.fontFamily
 
 @Composable
 fun EnterDetailField(

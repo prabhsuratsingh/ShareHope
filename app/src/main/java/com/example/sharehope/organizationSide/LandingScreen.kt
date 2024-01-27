@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sharehope.R
-import com.example.sharehope.fontFamily
+import com.example.sharehope.ui.theme.fontFamily
 import com.example.sharehope.ui.theme.Violet
 
 @Composable
