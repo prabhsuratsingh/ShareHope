@@ -13,7 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.example.sharehope.R
+import com.example.sharehope.organizationSide.logic.BottomNavBarButtons
 import com.example.sharehope.organizationSide.uiElements.BottomNavBar
 import com.example.sharehope.organizationSide.uiElements.DollarIcon
 import com.example.sharehope.organizationSide.uiElements.EnterDetailField
@@ -24,7 +26,14 @@ import com.example.sharehope.organizationSide.uiElements.TopTextRow
 fun NewPostScreen() {
 
     Scaffold (
-        bottomBar = { BottomNavBar() }
+        bottomBar = { BottomNavBar(navController = rememberNavController(),
+            items = listOf(
+                BottomNavBarButtons.Home,
+                BottomNavBarButtons.Map,
+                BottomNavBarButtons.AddPost,
+                BottomNavBarButtons.Money,
+                BottomNavBarButtons.Profile)
+        )}
     ){innerPadding ->
         Column (
             modifier = Modifier
