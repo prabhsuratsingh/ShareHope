@@ -1,4 +1,4 @@
-package com.example.Sharehopeui
+package com.example.Sharehopeuig
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
