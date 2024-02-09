@@ -24,7 +24,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.sharehope.R
+import com.example.sharehope.organizationSide.logic.BottomNavBarButtons
 import com.example.sharehope.ui.theme.fontFamily
 import com.example.sharehope.organizationSide.uiElements.BottomNavBar
 import com.example.sharehope.organizationSide.uiElements.SingleGradientBox
@@ -34,7 +37,15 @@ import com.example.sharehope.organizationSide.uiElements.TopTextRow
 fun OngoingCampDetailedView() {
 
     Scaffold (
-        bottomBar = { BottomNavBar()}
+        bottomBar = { BottomNavBar(
+            navController = rememberNavController(),
+            items = listOf(
+                BottomNavBarButtons.Home,
+                BottomNavBarButtons.Map,
+                BottomNavBarButtons.AddPost,
+                BottomNavBarButtons.Money,
+                BottomNavBarButtons.Profile)
+        )}
     ){innerPadding ->
 
         Column (

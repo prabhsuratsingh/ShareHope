@@ -1,10 +1,20 @@
 package com.example.sharehope.organizationSide.uiElements
 
 
+import android.graphics.drawable.Icon
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
@@ -17,38 +27,68 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.example.sharehope.R
+import com.example.sharehope.organizationSide.logic.BottomNavBarButtons
+import com.example.sharehope.organizationSide.logic.OrgScreens
 import com.example.sharehope.ui.theme.BottomBarColor
 
 @Composable
-fun BottomNavBar() {
-    //transfer this list and corresponding state to view model
-    var selectedItem by remember{ mutableIntStateOf(0) }
-    val items = listOf("home","map","addPost","money","profile")
+fun BottomNavBar(
+    navController: NavController,
+    items: List<BottomNavBarButtons>
+) {
 
-    NavigationBar (
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentScreen = backStackEntry?.destination?.route
+
+    BottomAppBar(
         modifier = Modifier
             .width(392.dp)
             .height(60.dp)
             .background(color = Color.White)
             .clip(RoundedCornerShape(30.dp, 30.dp, 0.dp, 0.dp)),
         containerColor = BottomBarColor,
-        contentColor = Color.Black
+        //contentColor = Color.Black
     ) {
-        items.forEachIndexed { index, item ->
-            NavigationBarItem(
-                selected = selectedItem == index,
-                onClick = { selectedItem = index},
-                icon = { /*TODO to create a sealed class with each button as an
-                             object */}
-            )
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 12.dp, end = 12.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ){
+            items.forEach(){item ->
+                Image(
+                    painter = painterResource(item.icon),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(24.dp)
+                        .clickable {
+                            if(currentScreen != item.route) {
+                                navController.navigate(item.route)
+                            }
+                        }
+                )
+            }
         }
+
     }
 }
 
 @Preview
 @Composable
 fun DisplayBottomBar() {
-    BottomNavBar()
+    BottomNavBar( navController = rememberNavController(),
+        items = listOf(
+            BottomNavBarButtons.Home,
+            BottomNavBarButtons.Map,
+            BottomNavBarButtons.AddPost,
+            BottomNavBarButtons.Money,
+            BottomNavBarButtons.Profile)
+    )
 }
