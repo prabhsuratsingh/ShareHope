@@ -17,4 +17,6 @@ val C1 = Color(0xFF562A9E)
 val C2 = Color(0xFFEB00FF)
 val C3 = Color(0xFFDE6CE7)
 val C4 = Color(0xFFE4A6E9)
+val C5 = Color(0xffffffff)
+
 
