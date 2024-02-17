@@ -28,10 +28,11 @@ import com.example.sharehope.ui.theme.fontFamily
 fun LoginButton(
     modifier: Modifier = Modifier,
     @DrawableRes buttonImage: Int,
-    @StringRes buttonText: Int
+    @StringRes buttonText: Int,
+    onSignInClick: () -> Unit
 ) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = onSignInClick,
         shape = RoundedCornerShape(8.dp),
         colors = ButtonDefaults.buttonColors(Color.White),
         modifier = Modifier
@@ -66,6 +67,7 @@ fun LoginButton(
 fun DisplayButton() {
     LoginButton(
         buttonImage = R.drawable._icon__google_,
-        buttonText = R.string.login_google
+        buttonText = R.string.login_google,
+        onSignInClick = { }
     )
 }

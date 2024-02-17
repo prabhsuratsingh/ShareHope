@@ -30,7 +30,8 @@ import com.example.sharehope.ui.theme.Violet
 
 @Composable
 fun LandingScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onGetStartedClick: () -> Unit
 ) {
 
     Box (
@@ -60,7 +61,7 @@ fun LandingScreen(
             )
             Spacer(modifier = Modifier.height(500.dp))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = onGetStartedClick,
                 colors = ButtonDefaults.buttonColors(Violet),
                 modifier = Modifier
                     .width(360.dp)
@@ -97,5 +98,5 @@ fun LandingScreen(
 @Preview
 @Composable
 fun DisplayLanding() {
-    LandingScreen()
+    LandingScreen(onGetStartedClick = {})
 }
