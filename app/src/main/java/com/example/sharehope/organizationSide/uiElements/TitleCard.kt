@@ -1,4 +1,4 @@
-package com.example.sharehope.organizationSide
+package com.example.sharehope.organizationSide.uiElements
 
 
 import androidx.compose.foundation.Image
