@@ -1,6 +1,7 @@
 package com.example.sharehope.organizationSide
 
 
+import android.widget.Button
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -104,7 +105,7 @@ fun LoginScreen(
                     style = TextStyle(
                         fontSize = 26.sp,
                         fontFamily = fontFamily,
-                        fontWeight = FontWeight(400)
+                        fontWeight = FontWeight(500)
                     )
                 )
                 Text(
