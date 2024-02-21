@@ -26,7 +26,10 @@ import com.example.sharehope.organizationSide.uiElements.TopTextRow
 
 @Composable
 fun HomeScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onOngoingClick: () -> Unit = {},
+    onAllCampsClick: () -> Unit = {},
+    onDashboardClick: () -> Unit = {},
 ) {
     Scaffold (
         bottomBar = { BottomNavBar(
@@ -58,13 +61,15 @@ fun HomeScreen(
                     background = R.drawable.ongoing_camp,
                     modifier = Modifier.padding(horizontal = 10.dp),
                     width = 175.dp,
-                    text = R.string.ongoing_camps
+                    text = R.string.ongoing_camps,
+                    onBoxClick = onOngoingClick
                 )
                 CardButton(
                     background = R.drawable.all_camps,
                     modifier = Modifier.padding(horizontal = 10.dp),
                     width = 175.dp,
-                    text = R.string.all_camps
+                    text = R.string.all_camps,
+                    onBoxClick = onAllCampsClick
                 )
 
             }
@@ -79,7 +84,8 @@ fun HomeScreen(
                 ),
                 background = R.drawable.dashboard_pic,
                 text = R.string.dashboard,
-                width = 375.dp
+                width = 375.dp,
+                onBoxClick = onDashboardClick
             )
         }
     }

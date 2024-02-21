@@ -29,10 +29,10 @@ fun LoginButton(
     modifier: Modifier = Modifier,
     @DrawableRes buttonImage: Int,
     @StringRes buttonText: Int,
-    onSignInClick: () -> Unit
+    onContinueClick: () -> Unit
 ) {
     Button(
-        onClick = onSignInClick,
+        onClick = onContinueClick,
         shape = RoundedCornerShape(8.dp),
         colors = ButtonDefaults.buttonColors(Color.White),
         modifier = Modifier
@@ -66,8 +66,8 @@ fun LoginButton(
 @Composable
 fun DisplayButton() {
     LoginButton(
-        buttonImage = R.drawable._icon__google_,
-        buttonText = R.string.login_google,
-        onSignInClick = { }
+        buttonImage = R.drawable.metamask_icon,
+        buttonText = R.string.login_metamask,
+        onContinueClick = { }
     )
 }

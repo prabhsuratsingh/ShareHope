@@ -31,21 +31,32 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.sharehope.R
 import com.example.sharehope.organizationSide.logic.BottomNavBarButtons
+import com.example.sharehope.organizationSide.logic.BottomNavBarButtons.AddPost.route
 import com.example.sharehope.organizationSide.logic.OrgScreens
 import com.example.sharehope.ui.theme.BottomBarColor
 
 @Composable
 fun BottomNavBar(
-    navController: NavController,
-    items: List<BottomNavBarButtons>
+    navController: NavHostController,
+    items: List<BottomNavBarButtons>,
+    //onBottomClick: () -> Unit
 ) {
 
-    val backStackEntry by navController.currentBackStackEntryAsState()
-    val currentScreen = backStackEntry?.destination?.route
+    /*val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = backStackEntry?.destination?.route*/
+
+    /*@Composable
+    fun currentRoute(navController: NavHostController): String? {
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
+        return navBackStackEntry?.arguments?.getString(route)
+    }*/
+
+    //val currentRoute = currentRoute(navController)
 
     BottomAppBar(
         modifier = Modifier
@@ -69,9 +80,8 @@ fun BottomNavBar(
                     modifier = Modifier
                         .size(24.dp)
                         .clickable {
-                            if(currentScreen != item.route) {
-                                navController.navigate(item.route)
-                            }
+                                item.onClick
+                            //onBottomClick()
                         }
                 )
             }
@@ -79,6 +89,9 @@ fun BottomNavBar(
 
     }
 }
+
+
+
 
 @Preview
 @Composable
@@ -89,6 +102,7 @@ fun DisplayBottomBar() {
             BottomNavBarButtons.Map,
             BottomNavBarButtons.AddPost,
             BottomNavBarButtons.Money,
-            BottomNavBarButtons.Profile)
+            BottomNavBarButtons.Profile),
+        //onBottomClick = {}
     )
 }

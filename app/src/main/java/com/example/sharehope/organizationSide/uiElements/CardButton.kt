@@ -2,6 +2,7 @@ package com.example.sharehope.organizationSide.uiElements
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,7 +31,8 @@ fun CardButton(
     modifier: Modifier = Modifier,
     @DrawableRes background: Int,
     @StringRes text: Int,
-    width: Dp
+    width: Dp,
+    onBoxClick: () -> Unit
 ) {
     Box (
         modifier = modifier
@@ -40,6 +42,10 @@ fun CardButton(
             .paint(
                 painterResource(id = background),
                 contentScale = ContentScale.FillBounds
+            )
+            .clickable(
+                enabled = true,
+                onClick = onBoxClick
             )
     ){
         Text(
@@ -66,7 +72,8 @@ fun DisplayCardButton() {
     CardButton(
         background = R.drawable.ongoing_camp,
         width = 175.dp,
-        text = R.string.ongoing_camps
+        text = R.string.ongoing_camps,
+        onBoxClick = { }
         )
 }
 

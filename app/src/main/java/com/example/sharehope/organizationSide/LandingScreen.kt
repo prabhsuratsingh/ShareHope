@@ -68,7 +68,7 @@ fun LandingScreen(
                     .height(60.dp)
             ) {
                 Text(
-                    text = "Let's get started",
+                    text = "Connect to Metamask",
                     style = TextStyle(
                         fontFamily = fontFamily,
                         color = Color.White,
